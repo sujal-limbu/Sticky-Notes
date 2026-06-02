@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        {% for i in note %}
+        <div class="col-md-4 mb-3">
+            <div class="page p-3 border">
+                <h4>{{ i.title }}</h4>
+                <br>
+                <ul>
+                    <li>{{ i.desc }}</li>
+                </ul>
+                <br>
+                <a href="{% url 'note-delete' i.id %}">
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </a>
+
+                <a href="{% url 'note-update' i.id %}">
+                    <button class="btn btn-success">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4 d-flex justify-content-center">
+
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <p class="form-title">Add Your Note</p>
+        <div class="input-container">
+            <label for="title">Title : </label>
+            <input type="text" id="title" name="title" placeholder="Enter Title">
+            <span>
+            </span>
+        </div>
+        <div class="input-container mt-2">
+            <label for="desc">Description : </label>
+            <input type="text" id="desc" name="desc" placeholder="Enter Your Note Description">
+        </div>
+        <button type="submit" class="submit">
+            Add Note
+        </button>
+    </form>
+
+</div>
+{% endblock content %}
